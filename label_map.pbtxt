@@ -1,0 +1,19 @@
+item {
+  id: 1
+  name: 'thumbs_up'
+}
+
+item {
+  id: 2
+  name: 'thumbs_down'
+}
+
+item {
+  id: 3
+  name: 'fist'
+}
+
+item {
+  id: 4
+  name: 'index'
+}
