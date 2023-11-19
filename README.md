@@ -15,9 +15,9 @@ Before you begin, ensure that you have the following prerequisites in place:
 2. [TensorFlow 2 Object Detection API](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html) is installed. Follow the provided tutorial for installation.
 
 3. Verify TensorFlow installation:
-
+```bash
 python -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
-
+```
 4. Ensure CUDA Toolkit and CUDNN are installed properly.
 
 5. Download the TensorFlow model repository and ensure it's accessible in a different folder than this repository. [TensorFlow Models Repository](https://github.com/tensorflow/models)
@@ -82,11 +82,13 @@ python DownloadModel.py
 Navigate to the `models/research` folder from earlier and fine-tune the model with the following two commands:
 
 1. Train the model:
+```bash 
 python object_detection/model_main_tf2.py --pipeline_config_path=C:/Users/UserName/ObjectDetectionTutorial/ssd_mobilenet_v2_fpnlite_320x320_coco17_tpu-8/pipeline.config --model_dir=C:/Users/UserName/ObjectDetectionTutorial/ssd_mobilenet_v2_fpnlite_320x320_coco17_tpu-8/ --alsologtostderr
-
+```
 2. Export the model:
+```bash 
 python object_detection/exporter_main_v2.py --pipeline_config_path=C:/Users/UserName/ObjectDetectionTutorial/ssd_mobilenet_v2_fpnlite_320x320_coco17_tpu-8/pipeline.config --trained_checkpoint_dir=C:/Users/UserName/ObjectDetectionTutorial/ssd_mobilenet_v2_fpnlite_320x320_coco17_tpu-8/ --output_directory=C:/Users/UserName/ObjectDetectionTutorial/ssd_mobilenet_v2_fpnlite_320x320_coco17_tpu-8/saved_model
-
+```
 ## Testing the Model
 
 1. Navigate back to this Git repository.
@@ -96,3 +98,5 @@ python object_detection/exporter_main_v2.py --pipeline_config_path=C:/Users/User
 python live.py
 
 Enjoy real-time gesture detection with your fine-tuned model!
+
+![Example](images/example.png)
